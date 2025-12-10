@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK Real Estate</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            overflow: auto;
+        }
+        
+        li {
+            display: inline-block;
+            padding: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            overflow: auto;
+            overflow: hidden;
+        }
+        
+        li a {
+            height: 100%;
+            text-decoration: none;
+            color: rgb(63, 5, 117);
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 20px;
+            /* font-weight: bold; */
+        }
+        
+        li:hover a {
+            color: rgb(14, 132, 243);
+            text-shadow: 2px 2px 5px rgb(166, 186, 243);
+        }
+        
+        li:hover {
+            background-color: rgb(216, 116, 116);
+        }
+        
+        .menu {
+            background-color: rgba(131, 124, 124, 0.3);
+            overflow: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .align_right_menu {
+            float: right;
+        }
+        /* dropdown start*/
+        
+        .dropdown_content {
+            display: none;
+            margin-top: 15px;
+            position: absolute;
+            background-color: rgba(131, 124, 124, 0.3);
+            box-shadow: 2px 2px 5px black;
+        }
+        
+        .dropdown_content ul li {
+            display: block;
+            color: rgb(6, 63, 116);
+        }
+        
+        .dropdown_content ul li a {
+            color: rgb(6, 63, 116);
+            width: auto;
+            right: 0%;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        
+        .dropdown_menu {}
+        
+        .dropdown_menu:hover .dropdown_content {
+            display: block;
+        }
+        
+        .dropdown_content li:hover a {
+            color: rgb(14, 132, 243);
+        }
+        /* dropdown end*/
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown_menu">
+                <a href="#">Buy</a>
+                <div class="dropdown_content">
+                    <ul>
+                        <li><a href="#">บ้าน</a></li>
+                        <li><a href="#">คอนโด</a></li>
+                        <li><a href="#">เชิงพาณิชย์</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">About us</a></li>
+            <li class="align_right_menu"><a href="#">Login</a></li>
+
+        </ul>
+    </div>
+</body>
+
+</html>

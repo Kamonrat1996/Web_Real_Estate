@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK Real Estate</title>
+    <script src="static/JavaScript/jquery-3.5.1.min.js"></script>
+    <script src="static/anime-master/lib/anime.min.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            overflow: auto;
+        }
+        
+        li {
+            display: inline-block;
+            padding: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            overflow: auto;
+            overflow: hidden;
+        }
+        
+        li a {
+            height: 100%;
+            text-decoration: none;
+            color: rgb(63, 5, 117);
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 20px;
+            /* font-weight: bold; */
+        }
+        
+        li:hover a {
+            color: rgb(14, 132, 243);
+            text-shadow: 2px 2px 5px rgb(166, 186, 243);
+        }
+        
+        li:hover {
+            background-color: rgb(216, 116, 116);
+        }
+        
+        .menu {
+            background-color: rgba(131, 124, 124, 0.3);
+            overflow: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .align_right_menu {
+            float: right;
+        }
+        /* dropdown start*/
+        
+        .dropdown_content {
+            display: none;
+            margin-top: 15px;
+            position: absolute;
+            background-color: rgba(131, 124, 124, 0.3);
+            box-shadow: 2px 2px 5px black;
+            z-index: 100;
+        }
+        
+        .dropdown_content ul li {
+            display: block;
+            color: rgb(6, 63, 116);
+        }
+        
+        .dropdown_content ul li a {
+            color: rgb(6, 63, 116);
+            width: auto;
+            right: 0%;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        
+        .dropdown_menu {
+            z-index: 100;
+        }
+        
+        .dropdown_menu:hover .dropdown_content {
+            display: block;
+        }
+        
+        .dropdown_content li:hover a {
+            color: rgb(14, 132, 243);
+        }
+        /* dropdown end*/
+        /* search_start*/
+        
+        .main {
+            width: 80%;
+            /* height: 150px; */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(231, 119, 175, 0.788);
+            opacity: 0;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .container01 {
+            width: 100%;
+            height: 1000px;
+            background-image: url('static/img/4.jpg');
+        }
+        
+        .container02 {
+            width: 100%;
+            height: 1000px;
+            background-color: rgb(133, 228, 228);
+        }
+        
+        .main2 {
+            width: 500px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(235, 39, 137, 0.788);
+            opacity: 0;
+        }
+        
+        .search_box {
+            padding: 20px;
+            margin-top: 30px;
+            border: rgb(66, 64, 64) solid;
+            border-radius: 25px;
+            background-color: rgba(66, 64, 64, 0.5);
+        }
+        
+        .search_box form input[type=submit] {
+            height: 40px;
+            border-radius: 0px 10px 10px 0px;
+        }
+        
+        .search_box form select {
+            height: 40px;
+        }
+        
+        .search_box form input[type=text] {
+            height: 40px;
+            border: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-radius: 10px 0px 0px 10px;
+        }
+        
+        .main h1 {
+            color: white;
+            text-shadow: 2px 2px rgb(31, 8, 8);
+        }
+        
+        .main b {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown_menu">
+                <a href="#">Buy</a>
+                <div class="dropdown_content">
+                    <ul>
+                        <li><a href="#">บ้าน</a></li>
+                        <li><a href="#">คอนโด</a></li>
+                        <li><a href="#">เชิงพาณิชย์</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">About us</a></li>
+            <li class="align_right_menu"><a href="#">Login</a></li>
+
+        </ul>
+    </div>
+    <!-- End of menu -->
+
+    <!--start search-->
+    <div class="container01">
+        <div class="main">
+            <h1>ซื้อขายอสังหาในประเทศไทย</h1>
+            <b>เราช่่วยให้คุณหาบ้านและที่ดินที่ถูกใจคุณ</b>
+            <div class="search_box">
+                <form action="">
+                    <input type="text" name="keyword" id="">
+                    <select name="property_type" id="">
+                    <option value="">บ้าน</option>
+                    <option value="">ที่ดิน</option>
+                    <option value="">เชิงพาณิชย์</option>
+                </select>
+                    <input type="submit" value="search">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container02">
+        <div class="main2"></div>
+    </div>
+    <script>
+        anime({
+            targets: '.main',
+            backgroundColor: 'hsla(0, 0%, 50%, 0.5)',
+            opacity: [0, 1],
+            translateY: 0,
+            duration: 800,
+            rotate: '2turn',
+            delay: 800,
+
+
+        });
+
+        $(document).ready(function() {
+            var menu_height = $(".menu").height();
+            var windows_height = $(window).height();
+            var image_height = windows_height - menu_height;
+            $(".container01").height(image_height);
+
+            $(window).resize(function() {
+                var menu_height = $(".menu").height();
+                var windows_height = $(window).height();
+                var image_height = windows_height - menu_height;
+                $(".container01").height(image_height);
+            });
+
+            var animationForMain2 = function() {
+                if ($(".main2").attr("animation_finish", 1) == 1) {
+
+                } else {
+
+
+                    $(".main2").attr("animation_finish", 1);
+                    var timeline = anime.timeline({
+                        easing: 'easeOutElastic(5, .5)',
+                        duration: 800,
+                    }).add({
+                        targets: '.main2',
+                        translateY: 250,
+                        opacity: [0, 1],
+                        rotate: '1turn',
+                        backgroundColor: '#f00',
+                    });
+                    animation.finished.then(function() {
+                        $(".main2").attr("animation_finish", 1);
+                    });
+                }
+            };
+
+            $(window).scroll(function() {
+                var hT = $('.main2').offset().top,
+                    hH = $('.main2').outerHeight(),
+                    wH = $(window).height(),
+                    wS = $(this).scrollTop();
+                if (wS > (hT + hH - wH)) {
+                    console.log('H1 on the view!');
+                    animationForMain2();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
